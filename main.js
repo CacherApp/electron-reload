@@ -31,7 +31,9 @@ module.exports = (glob, options) => {
    */
   let onChange = () => {
     browserWindows.forEach((bw) => {
-      bw.webContents.reloadIgnoringCache()
+        bw.loadURL(
+            process.env.ELECTRON_RELOAD_PATH
+        );
     })
   }
 
